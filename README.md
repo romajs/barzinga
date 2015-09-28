@@ -1,4 +1,4 @@
 barzinga
 ========
 
-[](./barzinga.png)
+![](./barzinga.png)
