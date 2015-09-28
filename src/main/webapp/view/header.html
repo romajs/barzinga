@@ -1,0 +1,15 @@
+<br>
+<div class="container container-header" ng-controller="UserController" ng-init="init()">
+    <div class="row user-info alert" ng-class="user.balance >= 0 ? 'alert-success' : 'alert-danger'">
+        <div class="user-greetings">
+            <div class="user-greetings pull-left">
+                <span>{{'greetings.hello'|dxI18n}}, </span>
+                <span class="user-name bold">{{user.name}}</span>
+            </div>
+            <div class="user-balance pull-right">
+                <span class="">{{'user.balance'|dxI18n}}</span>
+                <span class="bold user-balance">{{user.balance|currency}}</span>
+            </div>
+        </div>
+    </div>
+</div>

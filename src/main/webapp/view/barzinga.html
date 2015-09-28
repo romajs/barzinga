@@ -1,32 +1,21 @@
 <head>
     <title>{{'app.title'|dxI18n}}</title>
 </head>
-<body>
-    <div class="container container-barzinga" ng-controller="BarzingaController" ng-init="init()">
-        <!-- Header -->
-        <div class="row">
-            <div class="user-info pull-right">
-                <div class="col-sm-6 user-greetings">
-                    <span>{{'greetings.hello'|dxI18n}}</span>
-                    <span class="user-name">{{user.name}}</span>
-                </div>
-                <div class="col-sm-6 user-balance">
-                    <span>{{'user.balance'|dxI18n}}</span>
-                    <span class="user-balance">{{user.balance|currency}}</span>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <img src="img/bazinga-logo.png" class="center-block" />
-        </div>
-        <div class="row stock">
-            <div class="col-sm-4 stock-items" ng-repeat="item in items">
-                <span class="center-block btn btn-warning">{{item.name}}</span>
-                <img src="{{item.code|dxImg}}" class="center-block" />
-                <!-- <span>{{item.amount|number:2}}</span> -->
-                <span class="center-block btn btn-success">{{item.price|currency}}</span>
-            </div>
-        </div>
-        <br>
+<div class="container container-content" ng-controller="BarzingaController" ng-init="init()">
+    <div class="row barzinga-logo">
+        <img src="img/bazinga-logo.png" class="center-block" />
     </div>
-</body>
+    <div class="row stock">
+        <div class="col-sm-4 stock-items" ng-repeat="item in items  | orderBy: 'name' | orderBy: activesFirst">
+            <!-- <span class="center-block btn btn-danger">{{item.name}}</span> -->
+            <div class="item center-block" ng-click="buy(item)" ng-class="item.amount > 0 ? 'active' : 'inactive'"
+                title="{{item.amount > 0 ? 'item.buy.click' : 'item.buy.outofstock' | dxI18n:item.name}}" >
+                <span class="item-price">{{item.price|currency}}</span>
+                <img src="{{'item-'+item.code|dxImg}}" class="center-block" />
+            </div>
+            <br>
+            <br>
+            <!-- <span class="center-block btn btn-primary">{{item.amount}}</span> -->
+        </div>
+    </div>
+</div>
