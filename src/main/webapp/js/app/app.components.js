@@ -35,3 +35,21 @@ app.factory('dxFormValidator', ['dxI18n', function(dxI18n) {
 
     }
 ]);
+
+app.factory('dxPromise', function($q) {
+
+    return function(request) {
+        var deferred = $q.defer();
+        if(!request) {
+            deferred.resolve();
+        } else {
+            request.success(function(result) {
+                deferred.resolve(result);
+            }).error(function(result) {
+                deferred.reject(result);
+            });
+        }
+        return deferred.promise;
+    };
+
+});

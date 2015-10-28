@@ -1,4 +1,3 @@
-
 var modules = [];
 
 modules.push('ngLocale', 'ngRoute');
@@ -9,6 +8,16 @@ modules.push('app.routes');
 modules.push('app.services');
 
 var app = angular.module('app', modules);
+
+app.value('dxConfig', function() {
+    return {
+        rootUrl: window.location.protocol + '//' + window.location.host,
+        apiUrl: this.rootUrl + '/api',
+        settings: {
+            // TODO
+        },
+    };
+});
 
 app.factory("dxResourcesBundle", function() {
     return {
