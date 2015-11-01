@@ -37,12 +37,10 @@
 
         <!-- App / Services -->
         <script type="text/javascript" charset="utf-8" src="js/service/ItemService.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/service/UserService.js"></script>
 
         <!-- App / Controllers -->
-        <script type="text/javascript" charset="utf-8" src="js/controller/BarzingaController.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/controller/IndexController.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/controller/LoginController.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/controller/HomeController.js"></script>
 
         <!-- App / Config -->
         <script type="text/javascript" charset="utf-8" src="js/app/app.js"></script>
@@ -55,7 +53,7 @@
     </head>
     <body class="container-fluid" ng-controller="IndexController" ng-init="init()">
         <div data-ng-include src="'view/header.html'"></div>
-        <div data-ng-include src="'view/barzinga.html'"></div>
+        <div data-ng-include src="'view/home.html'"></div>
         <div data-ng-include src="'view/footer.html'"></div>
     </body>
 </html>

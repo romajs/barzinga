@@ -1,4 +1,4 @@
-function BarzingaController($scope, $rootScope, itemService) {
+function HomeController($scope, $rootScope, itemService) {
 
 	$scope.items = [];
 
