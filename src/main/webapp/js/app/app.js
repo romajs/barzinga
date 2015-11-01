@@ -12,6 +12,9 @@ modules.push('app.services');
 // modules.push('satellizer');
 modules.push('directive.g+signin');
 
+modules.push('app.home');
+modules.push('app.login');
+
 var app = angular.module('app', modules);
 
 // satellizer config
@@ -27,12 +30,31 @@ var app = angular.module('app', modules);
 
 // });
 
+app.config(function($urlRouterProvider) {
+
+    $urlRouterProvider.otherwise('/');
+
+});
+
+app.run(function($state, $rootScope) {
+    $rootScope.$on('$stateChangeStart', function(event, toState, fromState) {
+        if(toState.data && toState.data.requiresLogin && !$rootScope.user.isAuthenticated) {
+            event.preventDefault();
+            $state.go('login');
+        }
+    });
+});
+
 app.value('dxConfig', {
     rootUrl: window.location.protocol + '//' + window.location.host,
     apiUrl: this.rootUrl + '/api',
     settings: {
         googleClientId: '434805178213-3s9o2qb2kh4fau4vaaa64bbu68jiajig',
     },
+});
+
+app.run(function($rootScope, dxConfig) {
+    $rootScope.googleClientId = dxConfig.settings.googleClientId;
 });
 
 app.factory("dxResourcesBundle", function() {

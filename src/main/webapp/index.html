@@ -13,7 +13,6 @@
         <link rel="stylesheet" type="text/css" href="css/base.css" />
 
         <!-- External libraries -->
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script type="text/javascript" charset="utf-8" src="lib/jquery/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="lib/angular/angular.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="lib/angular/angular-animate.min.js"></script>
@@ -22,8 +21,9 @@
         <script type="text/javascript" charset="utf-8" src="lib/angular/angular-resource.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="lib/angular/angular-route.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="lib/angular/custom/ui-bootstrap-tpls-0.11.0.min.js"></script>
-        <!--<script type="text/javascript" charset="utf-8" src="lib/angular/custom/ngmodel-format.js"></script>-->
+        <script type="text/javascript" charset="utf-8" src="lib/angular/custom/angular-ui-router.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="lib/angular/custom/google-plus-signin.js"></script>
+        <!--<script type="text/javascript" charset="utf-8" src="lib/angular/custom/ngmodel-format.js"></script>-->
         <script type="text/javascript" charset="utf-8" src="lib/bootstrap/js/bootstrap.js"></script>
         <!-- <script src="//cdn.jsdelivr.net/satellizer/0.12.5/satellizer.min.js"></script>-->
         <!-- <script src="https://apis.google.com/js/platform.js" async defer></script>-->
@@ -37,10 +37,11 @@
 
         <!-- App / Services -->
         <script type="text/javascript" charset="utf-8" src="js/service/ItemService.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/service/UserService.js"></script>
 
         <!-- App / Controllers -->
-        <script type="text/javascript" charset="utf-8" src="js/controller/IndexController.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/controller/HomeController.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/controller/LoginController.js"></script>
 
         <!-- App / Config -->
         <script type="text/javascript" charset="utf-8" src="js/app/app.js"></script>
@@ -50,10 +51,12 @@
         <script type="text/javascript" charset="utf-8" src="js/app/app.routes.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/app/app.services.js"></script>
 
+        <title>{{'app.title'|dxI18n}}</title>
+
     </head>
-    <body class="container-fluid" ng-controller="IndexController" ng-init="init()">
+    <body class="container-fluid">
         <div data-ng-include src="'view/header.html'"></div>
-        <div data-ng-include src="'view/home.html'"></div>
+        <div class="container container-content" ui-view ></div>
         <div data-ng-include src="'view/footer.html'"></div>
     </body>
 </html>

@@ -1,4 +1,17 @@
-function HomeController($scope, $rootScope, itemService) {
+angular.module('app.home' , [
+	'ui.router'
+])
+.config(function($stateProvider) {
+	$stateProvider.state('home', {
+		url: '/',
+		controller: 'HomeController',
+		templateUrl: 'view/home.html',
+		data: {
+			requiresLogin: true
+		}
+	});
+})
+.controller('HomeController', function($scope, $rootScope, itemService) {
 
 	$scope.items = [];
 
@@ -16,4 +29,5 @@ function HomeController($scope, $rootScope, itemService) {
 			item.amount--;
 		}
 	}
-}
+
+});
