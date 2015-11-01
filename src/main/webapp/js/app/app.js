@@ -1,22 +1,38 @@
 var modules = [];
 
+// angular
 modules.push('ngLocale', 'ngRoute');
+// app
 modules.push('app.components');
 modules.push('app.directives');
 modules.push('app.filters');
 modules.push('app.routes');
 modules.push('app.services');
+// thridy
+// modules.push('satellizer');
+modules.push('directive.g+signin');
 
 var app = angular.module('app', modules);
 
-app.value('dxConfig', function() {
-    return {
-        rootUrl: window.location.protocol + '//' + window.location.host,
-        apiUrl: this.rootUrl + '/api',
-        settings: {
-            // TODO
-        },
-    };
+// satellizer config
+// app.config(function($authProvider) {
+
+//     $authProvider.google({
+//       clientId: '434805178213-3s9o2qb2kh4fau4vaaa64bbu68jiajig.apps.googleusercontent.com'
+//     });
+
+//     $authProvider.google({
+//       url: '/',
+//     });
+
+// });
+
+app.value('dxConfig', {
+    rootUrl: window.location.protocol + '//' + window.location.host,
+    apiUrl: this.rootUrl + '/api',
+    settings: {
+        googleClientId: '434805178213-3s9o2qb2kh4fau4vaaa64bbu68jiajig',
+    },
 });
 
 app.factory("dxResourcesBundle", function() {

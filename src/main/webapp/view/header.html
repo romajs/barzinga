@@ -1,15 +1,32 @@
 <br>
-<div class="container container-header" ng-controller="UserController" ng-init="init()">
-    <div class="row user-info alert" ng-class="user.balance >= 0 ? 'alert-success' : 'alert-danger'">
-        <div class="user-greetings">
-            <div class="user-greetings pull-left">
-                <span>{{'greetings.hello'|dxI18n}}, </span>
-                <span class="user-name bold">{{user.name}}</span>
+<div class="container container-header">
+
+    <div class="row menu well">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">{{'menu.home'|dxI18n}}</a></li>
+        </ul>
+    </div>
+
+    <div class="row user-info well" id="user-info">
+
+        <div ng-hide="user.isAuthenticated">
+            <div class="user-sign-message">
+                <i>{{'user.signin.message'|dxI18n}}</i>
             </div>
-            <div class="user-balance pull-right">
-                <span class="">{{'user.balance'|dxI18n}}</span>
-                <span class="bold user-balance">{{user.balance|currency}}</span>
+            <div class="user-google-sign-button">
+                <google-plus-signin clientid="{{googleClientId}}"></google-plus-signin>
             </div>
         </div>
+
+        <div ng-show="user.isAuthenticated">
+            <div class="user-summary">
+                <p class="bold">{{user.name}}</p>
+                <p class="" ng-class="user.balance >= 0 ? 'text-success' : 'text-danger'">{{'user.balance'|dxI18n}} <span class="bold user-balance">{{(user.balance||0)|currency}}</span></p>
+             <a href="#" ng-click="signOut()">{{'user.logout'|dxI18n}}</a>
+            </div>
+            <img src="{{user.imageUrl}}"/>
+        </div>
+
     </div>
+
 </div>

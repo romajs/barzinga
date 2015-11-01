@@ -95,5 +95,23 @@
 }
 
 .user-info {
+}
 
+.user-info img {
+    border-radius: 50%;
+    float: right;
+    width: 80px;
+}
+
+.user-info .user-summary {
+    display: inline-block;
+    float: left;
+}
+
+.user-info .user-sign-message {
+    float: left;
+}
+
+.user-info .user-google-sign-button {
+    float: right;
 }

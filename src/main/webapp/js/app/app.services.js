@@ -30,19 +30,26 @@ app.factory('dxService', function($http, $q, dxConfig, dxPromise) {
 
 });
 
-function newDxService(name, url, instance) {
+function newDxService(name, url, instance, useYawp) {
 
 	console.debug('registering service for creation: ', name, url, instance);
 
 	app.service(name, function(dxConfig, yawpService, dxService) {
 
-		var service = angular.extend({}, new yawpService(url), new dxService(url), instance);
+		var service = instance;
+
+		if(useYawp) {
+			angular.extend(service, new yawpService(url));
+		}
+
+		angular.extend(service, new dxService(url));
+
 		console.debug('new dxService \"' + name + '\"" created as: ', service);
+
 		return service;
 
 	});
 };
 
-newDxService('itemService', '/items', new ItemService());
-newDxService('barService', '/bar', {});
-newDxService('fooService', '/foo', {});
+newDxService('itemService', '/items', new ItemService(), true);
+newDxService('userService', null, new UserService());

@@ -2,6 +2,9 @@
 <html lang="pt-BR" id="ng-app" ng-app="app">
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta name="google-signin-scope" content="profile email">
+        <meta name="google-signin-client_id" content="434805178213-3s9o2qb2kh4fau4vaaa64bbu68jiajig.apps.googleusercontent.com">
+
         <link rel="shortcut icon" href="{{'favicon'|dxImg}}" type="image/x-icon" />
 
         <!-- CSS -->
@@ -9,7 +12,7 @@
         <link rel="stylesheet" type="text/css" href="css/animate.css" />
         <link rel="stylesheet" type="text/css" href="css/base.css" />
 
-        <!-- Externa libraries -->
+        <!-- External libraries -->
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script type="text/javascript" charset="utf-8" src="lib/jquery/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="lib/angular/angular.min.js"></script>
@@ -20,7 +23,10 @@
         <script type="text/javascript" charset="utf-8" src="lib/angular/angular-route.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="lib/angular/custom/ui-bootstrap-tpls-0.11.0.min.js"></script>
         <!--<script type="text/javascript" charset="utf-8" src="lib/angular/custom/ngmodel-format.js"></script>-->
+        <script type="text/javascript" charset="utf-8" src="lib/angular/custom/google-plus-signin.js"></script>
         <script type="text/javascript" charset="utf-8" src="lib/bootstrap/js/bootstrap.js"></script>
+        <!-- <script src="//cdn.jsdelivr.net/satellizer/0.12.5/satellizer.min.js"></script>-->
+        <!-- <script src="https://apis.google.com/js/platform.js" async defer></script>-->
 
         <!-- App / Resources -->
         <script type="text/javascript" charset="utf-8" src="js/resources/i18n/messages_pt-br.js"></script>
@@ -31,10 +37,12 @@
 
         <!-- App / Services -->
         <script type="text/javascript" charset="utf-8" src="js/service/ItemService.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/service/UserService.js"></script>
 
         <!-- App / Controllers -->
         <script type="text/javascript" charset="utf-8" src="js/controller/BarzingaController.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/controller/UserController.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/controller/IndexController.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/controller/LoginController.js"></script>
 
         <!-- App / Config -->
         <script type="text/javascript" charset="utf-8" src="js/app/app.js"></script>
@@ -45,7 +53,7 @@
         <script type="text/javascript" charset="utf-8" src="js/app/app.services.js"></script>
 
     </head>
-    <body class="container-fluid">
+    <body class="container-fluid" ng-controller="IndexController" ng-init="init()">
         <div data-ng-include src="'view/header.html'"></div>
         <div data-ng-include src="'view/barzinga.html'"></div>
         <div data-ng-include src="'view/footer.html'"></div>
