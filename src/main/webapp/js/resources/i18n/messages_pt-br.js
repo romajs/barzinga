@@ -15,5 +15,14 @@ var msg_i18n_pt_br = {
 
     // Menu
     'menu.home': 'Home',
+
+    // Modal
+    'modal.title.confirm': 'Confirmação',
+    'modal.title.error': 'Erro',
+    'modal.title.info': 'Informação',
+    'modal.title.warning': 'Atenção',
+    'modal.button.ok': 'Ok',
+    'modal.button.no': 'Não',
+    'modal.button.yes': 'Sim',
     
 };
