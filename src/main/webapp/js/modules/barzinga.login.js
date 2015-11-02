@@ -1,4 +1,4 @@
-angular.module('app.login' , [
+angular.module('barzinga.login' , [
 	'ui.router'
 ])
 .config(function($stateProvider) {
@@ -12,11 +12,9 @@ angular.module('app.login' , [
 	});
 })
 .run(function($rootScope) {
-
 	$rootScope.user = {
 		isAuthenticated: false,
 	};
-
 })
 .run(function($rootScope, $state) {
 

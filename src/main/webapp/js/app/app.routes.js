@@ -1,5 +1,6 @@
-var app = angular.module('app.routes', []);
-
-app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider, $window) {
-        // ...
-    }]);
+angular.module('app.routes', [
+	'ui.router'
+])
+.config(['$urlRouterProvider', function($urlRouterProvider) {
+    $urlRouterProvider.otherwise('/');
+}])

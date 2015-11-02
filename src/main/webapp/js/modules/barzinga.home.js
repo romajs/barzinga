@@ -1,4 +1,4 @@
-angular.module('app.home' , [
+angular.module('barzinga.home' , [
 	'ui.router', 'dx.modal'
 ])
 .config(function($stateProvider) {
@@ -24,7 +24,7 @@ angular.module('app.home' , [
 	}
 
 	$scope.buy = function(item) {
-		
+
 		var messages = [];
 		messages.push('Deseja realmente efetuar a compra de \"' + item.name + '\"?');
 		messages.push('Valor: R$ ' + item.amount);
