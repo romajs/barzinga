@@ -1,0 +1,23 @@
+<body>
+	<div id="modalHeader" class="modal-header">
+		<div class="alert alert-{{content.type}}">
+			<button id="modalClose" type="button" class="close" data-ng-click="close()" aria-hidden="true">&times;</button>
+			<h3>{{content.title | dxI18n}}</h3>
+		</div>
+	</div>
+	<div id="modalContent" class="modal-body">
+		<div data-ng-repeat="message in content.messages track by message">{{message | dxI18n}}</div>
+	</div>
+	<div id="modalFooter" class="modal-footer">
+		<div class="btn-toolbar text-right">
+			<button data-ng-repeat="button in content.buttons" id="{{button.id}}" class="{{button.style}}"
+				data-ng-click="buttonClick(button)" data-dx-focus>{{button.caption | dxI18n}}</button>
+		</div>
+	</div>
+    <div data-ng-if="modalLoading.enabled" id="loading" class="loading-background">
+		<div class="loading-conteiner">
+			<img class="loading-img" src="img/loading.gif">
+		</div>
+	</div>
+</body>
+</html>

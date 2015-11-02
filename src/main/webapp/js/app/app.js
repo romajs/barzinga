@@ -11,6 +11,7 @@ modules.push('app.services');
 // thridy
 // modules.push('satellizer');
 modules.push('directive.g+signin');
+// modules.push('dx.modal');
 
 modules.push('app.home');
 modules.push('app.login');

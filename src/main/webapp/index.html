@@ -21,6 +21,7 @@
         <script type="text/javascript" charset="utf-8" src="lib/angular/angular-resource.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="lib/angular/angular-route.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="lib/angular/custom/ui-bootstrap-tpls-0.11.0.min.js"></script>
+        <!--<script type="text/javascript" charset="utf-8" src="lib/angular/custom/ui-bootstrap-tpls-0.14.3.min.js"></script>-->
         <script type="text/javascript" charset="utf-8" src="lib/angular/custom/angular-ui-router.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="lib/angular/custom/google-plus-signin.js"></script>
         <!--<script type="text/javascript" charset="utf-8" src="lib/angular/custom/ngmodel-format.js"></script>-->
@@ -39,7 +40,8 @@
         <script type="text/javascript" charset="utf-8" src="js/service/ItemService.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/service/UserService.js"></script>
 
-        <!-- App / Controllers -->
+        <!-- App / Modules -->
+        <script type="text/javascript" charset="utf-8" src="js/app.modules/modal.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/controller/HomeController.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/controller/LoginController.js"></script>
 
@@ -56,7 +58,7 @@
     </head>
     <body class="container-fluid">
         <div data-ng-include src="'view/header.html'"></div>
-        <div class="container container-content" ui-view ></div>
+        <div class="container container-content" ui-view></div>
         <div data-ng-include src="'view/footer.html'"></div>
     </body>
 </html>
