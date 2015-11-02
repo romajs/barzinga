@@ -11,6 +11,7 @@ angular.module('app', [
     // dextra
     'dx.i18n',
     'dx.modal',
+    'dx.utils',
     // google sign in
     'directive.g+signin',
 ])
@@ -30,9 +31,9 @@ angular.module('app', [
 .run(function($rootScope, dxConfig) {
     $rootScope.googleClientId = dxConfig.settings.googleClientId;
 })
-.run(function($state, $rootScope) {
+.run(function($state, $rootScope, authService) {
     $rootScope.$on('$stateChangeStart', function(event, toState, fromState) {
-        if(toState.data && toState.data.requiresLogin && !$rootScope.user.isAuthenticated) {
+        if(toState.data && toState.data.requiresLogin && !authService.isAuthenticated()) {
             event.preventDefault();
             $state.go('login');
         }

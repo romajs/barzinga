@@ -9,7 +9,7 @@
 
     <div class="row user-info well" id="user-info">
 
-        <div ng-hide="user.isAuthenticated">
+        <div ng-hide="isAuthenticated()">
             <div class="user-sign-message">
                 <i>{{'user.signin.message'|dxI18n}}</i>
             </div>
@@ -18,11 +18,11 @@
             </div>
         </div>
 
-        <div ng-show="user.isAuthenticated">
+        <div ng-show="isAuthenticated()">
             <div class="user-summary">
                 <p class="bold">{{user.name}}</p>
                 <p class="" ng-class="user.balance >= 0 ? 'text-success' : 'text-danger'">{{'user.balance'|dxI18n}} <span class="bold user-balance">{{(user.balance||0)|currency}}</span></p>
-             <a href="#" ng-click="signOut()">{{'user.logout'|dxI18n}}</a>
+             <a href="#" ng-click="logout()">{{'user.logout'|dxI18n}}</a>
             </div>
             <img src="{{user.imageUrl}}"/>
         </div>

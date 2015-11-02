@@ -1,5 +1,12 @@
-function UserService($http) {
+angular.module('user.service', [
+	
+])
+.service('userService', function($q) {
 
-	this.currentBalance = function() {
+	this.getCurrentBalance = function() {
+		var d = $q.defer();
+		d.resolve(10.50);
+		return d.promise;
 	}
-};
+
+})

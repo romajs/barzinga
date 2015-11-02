@@ -1,5 +1,5 @@
 angular.module('barzinga.login' , [
-	'ui.router'
+	'ui.router', 'auth.service', 'user.service'
 ])
 .config(function($stateProvider) {
 	$stateProvider.state('login', {
@@ -12,57 +12,28 @@ angular.module('barzinga.login' , [
 	});
 })
 .run(function($rootScope) {
-	$rootScope.user = {
-		isAuthenticated: false,
-	};
+	$rootScope.user = undefined;
 })
-.run(function($rootScope, $state) {
+.controller('LoginController', function($rootScope, $state, authService, userService) {
 
-	$rootScope.$on('event:google-plus-signin-success', function (event, googleAuthResult) {
-
-		var profile = googleAuthResult.getBasicProfile();
-
-    	$rootScope.user = {
-    		id:  profile.getId(),
-    		name: profile.getName(),
-    		imageUrl: profile.getImageUrl(),
-    		email:  profile.getEmail(),
-    		isAuthenticated: true,
-    	};
-		console.debug("user athenticated:", $rootScope.user);
-
-		// The ID token you need to pass to your backend:
-    	$rootScope.token = googleAuthResult.getAuthResponse().id_token;
-		console.debug("user token:", $rootScope.token);
-
-		$rootScope.$apply();
-
+	$rootScope.$on('authService.login', function(event, user) {
+		$rootScope.user = user;
+		userService.getCurrentBalance().then(function(value) {
+			$rootScope.user.balance = value;
+		});
 		$state.go('home');
 	});
 
-})
-.run(function($rootScope, $state) {
-
-	$rootScope.$on('event:google-plus-signin-failure', function (event, googleAuthResult) {
-		// TODO
-		$rootScope.$apply();
+	$rootScope.$on('authService.logout', function() {
+		$state.go('login');
 	});
 
-})
-.controller('LoginController', function($rootScope, $state) {
+	$rootScope.logout = function() {
+		authService.logout();
+	};
 
-	$rootScope.signOut = function() {
-        gapi.auth2.getAuthInstance().signOut().then(function () {
-
-	    	$rootScope.user = {
-	    		isAuthenticated: false,
-	    	};
-			console.debug("user unathenticated:", $rootScope.user);
-
-			$rootScope.$apply();
-
-			$state.go('login');
-		});
+	$rootScope.isAuthenticated = function() {
+		return authService.isAuthenticated();
 	};
 
 });

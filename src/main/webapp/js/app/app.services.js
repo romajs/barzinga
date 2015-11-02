@@ -52,4 +52,4 @@ function newDxService(name, url, instance, useYawp) {
 };
 
 newDxService('itemService', '/items', new ItemService(), true);
-newDxService('userService', null, new UserService());
+// // newDxService('userService', null, new UserService());
