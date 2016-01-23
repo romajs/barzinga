@@ -69,7 +69,7 @@ function dxModalBuilder($modal, params) {
 function dxModalService($modal, config) {
 
 	config.controller = config.controller || 'dxModalController';
-	config.templateUrl = config.templateUrl || 'view/template/modal.html';
+	config.templateUrl = config.templateUrl || 'templates/modal.html';
 
 	this.show = function(type, title, messages, callback) {
 		console.debug('show', type, title, messages, callback);
