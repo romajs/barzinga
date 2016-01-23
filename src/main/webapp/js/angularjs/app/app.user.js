@@ -1,7 +1,7 @@
-// angular.module('foodshelf.user', [
+// angular.module('app.user', [
 	
 // ])
-// .service('userService', function UserService(dxPromise) {
+// .service('userService', function(dxPromise) {
 
 // 	this.getCurrentBalance = function() {
 // 		return new dxPromise().then(function() {

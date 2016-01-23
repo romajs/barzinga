@@ -1,20 +1,21 @@
-angular.module('foodshelf.login' , [
-	'ui.router', 'auth.service', 'user.service'
+angular.module('app.login' , [
+	'ui.router', 'app.auth.service', 'app.user.service'
 ])
 .config(function($stateProvider) {
 	$stateProvider.state('login', {
 		url: '/login',
-		controller: 'LoginController',
-		templateUrl: 'view/login.html',
+		controller: 'appLoginController',
+		templateUrl: 'templates/login.html',
 		data: {
 			requiresLogin: false
 		}
 	});
 })
+
 .run(function($rootScope) {
 	$rootScope.user = undefined;
 })
-.controller('LoginController', function($rootScope, $state, authService, userService) {
+.controller('appLoginController', function($rootScope, $state, authService, userService) {
 
 	$rootScope.$on('authService.login', function(event, user) {
 		$rootScope.user = user;
@@ -36,4 +37,4 @@ angular.module('foodshelf.login' , [
 		return authService.isAuthenticated();
 	};
 
-});
+})

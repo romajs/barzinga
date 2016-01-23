@@ -1,4 +1,4 @@
-angular.module('user.service', [
+angular.module('app.user.service', [
 	
 ])
 .service('userService', function($q) {

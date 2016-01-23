@@ -1,0 +1,4 @@
+var resourceBundle = {
+	messages: [],
+	images: [],
+}

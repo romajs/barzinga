@@ -1,17 +1,17 @@
-angular.module('foodshelf.home' , [
+angular.module('app.home' , [
 	'ui.router', 'dx.modal'
 ])
 .config(function($stateProvider) {
 	$stateProvider.state('home', {
 		url: '/',
-		controller: 'HomeController',
-		templateUrl: 'view/home.html',
+		controller: 'appHomeController',
+		templateUrl: 'templates/home.html',
 		data: {
 			requiresLogin: true
 		}
 	});
 })
-.controller('HomeController', function($scope, $rootScope, itemService, dxModal) {
+.controller('appHomeController', function($scope, $rootScope, itemService, dxModal) {
 
 	$scope.items = [];
 
@@ -35,4 +35,4 @@ angular.module('foodshelf.home' , [
 		});
 	};
 
-});
+})

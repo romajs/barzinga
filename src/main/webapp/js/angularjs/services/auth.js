@@ -1,4 +1,4 @@
-angular.module('auth.service', [
+angular.module('app.auth.service', [
 	'ui.router',
     'directive.g+signin',
 ])

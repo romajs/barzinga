@@ -28,35 +28,34 @@
         <!-- <script src="https://apis.google.com/js/platform.js" async defer></script>-->
 
         <!-- App / Resources -->
+        <script type="text/javascript" charset="utf-8" src="js/resources/resources.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/resources/i18n/messages_pt-br.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/resources/img/images.js"></script>
 
         <!-- App / Services -->
-        <script type="text/javascript" charset="utf-8" src="js/services/auth.service.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/services/item.service.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/services/user.service.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/angularjs/services/auth.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/angularjs/services/item.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/angularjs/services/user.js"></script>
 
         <!-- App / Modules -->
-        <script type="text/javascript" charset="utf-8" src="js/modules/dx.i18n.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/modules/dx.modal.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/modules/dx.utils.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/modules/app.home.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/modules/app.login.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/angularjs/app/app.home.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/angularjs/app/app.login.js"></script>
+
+        <!-- App / Modules -->
+        <script type="text/javascript" charset="utf-8" src="js/angularjs/app/app.home.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/angularjs/app/app.login.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/angularjs/dx-angularjs-modules/dx.i18n.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/angularjs/dx-angularjs-modules/dx.modal.js"></script>
+
 
         <!-- App -->
-        <script type="text/javascript" charset="utf-8" src="js/app/app.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/app/app.components.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/app/app.directives.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/app/app.filters.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/app/app.routes.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/app/app.services.js"></script>
-
+        <script type="text/javascript" charset="utf-8" src="js/angularjs/app.js"></script>
         <title>{{'app.title'|dxI18n}}</title>
 
     </head>
     <body class="container-fluid">
-        <div data-ng-include src="'view/header.html'"></div>
-        <div class="container container-content" ui-view></div>
-        <div data-ng-include src="'view/footer.html'"></div>
+        <section data-ng-include src="'templates/header.html'"></section>
+        <main ui-view class="container container-content" ></main>
+        <section data-ng-include src="'templates/footer.html'"></section>
     </body>
 </html>

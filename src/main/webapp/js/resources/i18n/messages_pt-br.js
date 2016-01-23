@@ -1,4 +1,4 @@
-var msg_i18n_pt_br = {
+resourceBundle.messages['pt-br'] = {
 
     // App
     'app.title': 'Food Shelf',
