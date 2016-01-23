@@ -1,4 +1,4 @@
-angular.module('barzinga.login' , [
+angular.module('foodshelf.login' , [
 	'ui.router', 'auth.service', 'user.service'
 ])
 .config(function($stateProvider) {

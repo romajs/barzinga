@@ -1,4 +1,4 @@
-angular.module('barzinga.home' , [
+angular.module('foodshelf.home' , [
 	'ui.router', 'dx.modal'
 ])
 .config(function($stateProvider) {

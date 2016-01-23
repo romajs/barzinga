@@ -5,9 +5,9 @@ angular.module('app', [
     'app.filters',
     'app.routes',
     'app.services',
-    // barzinga
-    'barzinga.home',
-    'barzinga.login',
+    // foodshelf
+    'foodshelf.home',
+    'foodshelf.login',
     // dextra
     'dx.i18n',
     'dx.modal',

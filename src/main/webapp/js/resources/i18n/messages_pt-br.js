@@ -1,7 +1,7 @@
 var msg_i18n_pt_br = {
 
     // App
-    'app.title': 'Barzinga',
+    'app.title': 'Food Shelf',
 
     // User
     'user.balance': 'Saldo',

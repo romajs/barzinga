@@ -1,4 +1,4 @@
-// angular.module('barzinga.user', [
+// angular.module('foodshelf.user', [
 	
 // ])
 // .service('userService', function UserService(dxPromise) {
