@@ -20,9 +20,19 @@ angular.module('app', [
     dxI18nProvider.setResourceBundle(resourceBundle.messages['pt-br']);
 }])
 
-.config(['$urlRouterProvider', function($urlRouterProvider) {
-    $urlRouterProvider.otherwise('/');
-}])
+.config(function($stateProvider, $urlRouterProvider) {
+    $stateProvider.state('about', {
+        url: '/about',
+        templateUrl: 'templates/about.html',
+    }).state('help', {
+        url: '/help',
+        templateUrl: 'templates/help.html',
+    }).state('not_found', {
+        url: '/not_found',
+        templateUrl: 'templates/not_found.html',
+    })
+    $urlRouterProvider.otherwise('/not_found');
+})
 
 .factory("dxResourcesBundle", function() {
     return {
@@ -44,11 +54,11 @@ angular.module('app', [
 
 })
 
-.filter('dxImg', [ function() { // FIXME
+.filter('dxImg', function() { // FIXME
     return function(input) {
         return input ? resourceBundle.images[input] : input;
     };
-}])
+})
 
 .run(function($rootScope, dxConfig) {
     $rootScope.googleClientId = dxConfig.settings.googleClientId;
@@ -61,6 +71,12 @@ angular.module('app', [
             $state.go('login');
         }
     });
+})
+
+.run(function ($window, $rootScope) {
+    $rootScope.historyBack = function(){
+        $window.history.back();
+    }
 })
 
 .service('yawpService', function($http, $q, dxConfig) {

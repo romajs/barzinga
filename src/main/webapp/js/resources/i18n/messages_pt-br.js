@@ -27,4 +27,11 @@ resourceBundle.messages['pt-br'] = {
     'modal.button.no': 'Não',
     'modal.button.yes': 'Sim',
     
+    // Title
+    'title.about' : 'Sobre',
+    'title.help' : 'Ajuda',
+    'title.oops' : 'Ooops',
+
+    'page_not_found' : 'Pagina nao encontrada',
+    
 };

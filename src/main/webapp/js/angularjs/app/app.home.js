@@ -1,7 +1,7 @@
 angular.module('app.home' , [
 	'ui.router', 'dx.modal'
 ])
-.config(function($stateProvider) {
+.config(function($stateProvider, $urlRouterProvider) {
 	$stateProvider.state('home', {
 		url: '/',
 		controller: 'appHomeController',
@@ -9,7 +9,10 @@ angular.module('app.home' , [
 		data: {
 			requiresLogin: true
 		}
-	});
+	})
+	$urlRouterProvider.when('/home', function($state) {
+          $state.go('home');
+	})
 })
 .controller('appHomeController', function($scope, $rootScope, itemService, dxModal) {
 

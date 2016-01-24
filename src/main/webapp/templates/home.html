@@ -2,7 +2,7 @@
     <div class="row logo">
         <img src="img/logo.png" class="center-block" />
     </div>
-    <div class="row stock">
+    <div class="row">
         <div class="item col-sm-4" ng-repeat="item in items  | orderBy: 'name' | orderBy: activesFirst">
             <span class="item-label center-block">{{item.name}}</span>
             <div class="item-area center-block" ng-click="buy(item)" ng-class="item.amount > 0 ? 'active' : 'inactive'"

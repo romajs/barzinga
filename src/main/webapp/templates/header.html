@@ -5,31 +5,10 @@
     <div class="row navbar navbar-default">
 
         <ul class="nav navbar-nav">
-            <li role="presentation" class="active"><a href="#">{{'menu.home'|dxI18n}}</a></li>
+            <li role="presentation" class="active"><a href="#/home">{{'menu.home'|dxI18n}}</a></li>
             <li role="presentation" class=""><a href="#/about">{{'menu.about'|dxI18n}}</a></li>
             <li role="presentation" class=""><a href="#/help">{{'menu.help'|dxI18n}}</a></li>
         </ul>
-
-        <div class="nav navbar-nav navbar-right user-info" id="user-info">
-
-            <!-- <div ng-hide="isAuthenticated()">
-                <div class="user-google-sign-button">
-                    <google-plus-signin clientid="{{googleClientId}}"></google-plus-signin>
-                </div>
-            </div> -->
-
-            <div ng-show="isAuthenticated()">
-                <div class="user-summary">
-                    <!-- <p class="bold">{{user.name}}</p> -->
-                    <!-- <p class="" ng-class="user.balance >= 0 ? 'text-success' : 'text-danger'"> -->
-                        <!-- {{'user.balance'|dxI18n}} <span class="bold user-balance">{{(user.balance||0)|currency}}</span> -->
-                    <!-- </p> -->
-                    <!-- <a href="#" ng-click="logout()">{{'user.logout'|dxI18n}}</a> -->
-                </div>
-                <!-- <img src="{{user.imageUrl}}"/> -->
-            </div>
-
-        </div>
 
         <ul class="nav navbar-nav navbar-right user-info">
             <li ng-hide="isAuthenticated()" class="">

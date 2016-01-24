@@ -18,6 +18,10 @@ body {
     max-width: 720px;
 }
 
+.container h1 {
+    color: #D80A0A;
+}
+
 .container-header{
 }
 
