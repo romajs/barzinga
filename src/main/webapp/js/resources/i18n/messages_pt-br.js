@@ -32,6 +32,10 @@ resourceBundle.messages['pt-br'] = {
     'title.help' : 'Ajuda',
     'title.oops' : 'Ooops',
 
+    'buy' : 'Comprar',
+    'unavailable' : 'Indisponivel',
     'page_not_found' : 'Pagina nao encontrada',
+    'unities' : 'unidades',
+    'unity': 'unidade',
     
 };

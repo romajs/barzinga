@@ -7,17 +7,15 @@
             <span class="item-label center-block">{{item.name}}</span>
             <div class="item-area center-block" ng-click="buy(item)" ng-class="item.amount > 0 ? 'active' : 'inactive'"
                 title="{{item.amount > 0 ? 'item.buy.click' : 'item.buy.outofstock' | dxI18n:item.name}}" >
-                <!-- <span class="item-price">{{item.price|currency}}</span> -->
-                <span ng-show="item.amount" class="item-price">{{'Comprar'}}</span>
-                <span ng-hide="item.amount" class="item-price">{{'Indisponivel'}}</span>
+                <span ng-show="item.amount" class="item-detail">{{'buy'|dxI18n}}</span>
+                <span ng-hide="item.amount" class="item-detail">{{'unavailable'|dxI18n}}</span>
                 <img src="{{'item-'+item.code|dxImg}}" class="center-block" />
             </div>
-            <span ng-show="item.amount" class="item-label center-block">{{item.amount}} {{item.amount > 1 ? 'unidades' : 'unidade'}}</span>
+            <span ng-show="item.amount" class="item-label center-block">{{item.amount}} {{item.amount > 1 ? 'unities' : 'unity' | dxI18n}}</span>
             <span ng-show="item.amount" class="item-label center-block">{{item.price|currency}}</span>
             <span ng-hide="item.amount" class="item-label center-block">{{'Produto indisponivel'}}</span>
             <br>
             <br>
-            <!-- <span class="center-block btn btn-primary">{{item.amount}}</span> -->
         </div>
     </div>
 </div>

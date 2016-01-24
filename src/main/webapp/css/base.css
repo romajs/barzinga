@@ -7,7 +7,7 @@ body {
 }
 
 .logo img {
-    width: 700px;
+    /*width: 700px;*/
 }
 
 .bold {
@@ -72,14 +72,14 @@ body {
     max-width: 180px;
 }
 
-.item-area .item-price {
+.item-area .item-detail {
     font-weight: bold;
     opacity: 0.0;
     position: absolute;
 }
 
 .item-area.inactive {
-    border-color: #ccc;
+    border-color: #aaa;
 }
 
 .item-area.inactive img {
@@ -87,20 +87,20 @@ body {
 }
 
 .item-area.inactive:hover {
-    border-color: #bbb;
+    border-color: #ccc;
 }
 
 .item-area.inactive:hover img {
     opacity: 0.3;
 }
 
-.item-area.inactive .item-price {
+.item-area.inactive .item-detail {
     font-size: 28px;
     left: 16%;
     top: 35%;
 }
 
-.item-area.inactive:hover .item-price {
+.item-area.inactive:hover .item-detail {
     opacity: 1.0;
 }
 
@@ -118,13 +118,13 @@ body {
     cursor: pointer;
 }
 
-.item-area.active .item-price {
+.item-area.active .item-detail {
     font-size: 40px;
     left: 15%;
     top: 30%;
 }
 
-.item-area.active:hover .item-price {
+.item-area.active:hover .item-detail {
     opacity: 1.0;
 }
 
@@ -163,4 +163,11 @@ body {
 
 .navbar-nav.navbar-right:last-child {
     margin-right: 0px !important;
+}
+
+.user-signin-message {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 150px 0 200px 0;
 }
