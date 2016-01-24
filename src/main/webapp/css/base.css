@@ -171,3 +171,7 @@ body {
     text-align: center;
     margin: 150px 0 200px 0;
 }
+
+.history-value {
+    text-align: right;
+}

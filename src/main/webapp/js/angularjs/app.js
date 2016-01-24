@@ -3,7 +3,10 @@ angular.module('app', [
     // app
     'app.home',
     'app.login',
+    'app.history',
     // 'app.user',
+
+    // services
     'app.auth.service',
     'app.item.service',
 

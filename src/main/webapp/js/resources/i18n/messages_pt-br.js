@@ -17,6 +17,8 @@ resourceBundle.messages['pt-br'] = {
     'menu.home': 'Pagina inicial',
     'menu.about': 'Sobre',
     'menu.help': 'Ajuda',
+    'menu.account': 'Minha conta',
+    'menu.history': 'Historico',
 
     // Modal
     'modal.title.confirm': 'Confirmação',
@@ -30,6 +32,7 @@ resourceBundle.messages['pt-br'] = {
     // Title
     'title.about' : 'Sobre',
     'title.help' : 'Ajuda',
+    'title.history' : 'Historico',
     'title.oops' : 'Ooops',
 
     'buy' : 'Comprar',
