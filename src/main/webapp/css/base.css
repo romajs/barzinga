@@ -1,3 +1,7 @@
+body {
+    /*background-color: #D80A0A;*/
+}
+
 .logo {
     margin: 50px 0;    
 }
@@ -18,11 +22,12 @@
 }
 
 .container-content {
-    background-color: red;
-    border: 1px solid #ebccd1;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
+    /*background-color: red;*/
+    /*border: 1px solid #ebccd1;*/
+    /*border-radius: 5px;*/
+    /*-webkit-border-radius: 5px;*/
+    /*-moz-border-radius: 5px;*/
+    min-height: 100%;
 }
 
 .container-footer {
@@ -40,6 +45,10 @@
 }
 
 .item {
+    text-align: center;
+}
+
+.item-area {
     /*color: #428bca;*/
     /*color: #d9534f;*/
     /*color: #f0ad4e;*/
@@ -51,7 +60,7 @@
     width: 195px;
 }
 
-.item img {
+.item-area img {
     border-radius: 50%;
     height: 180px;
     /*outline: 2px solid darkblue;*/
@@ -59,63 +68,95 @@
     max-width: 180px;
 }
 
-.item .item-price {
+.item-area .item-price {
     font-weight: bold;
-    font-size: 52px;
     opacity: 0.0;
-    position:absolute;
-    left:25%;
-    top:27%;
+    position: absolute;
 }
 
-.item.inactive {
+.item-area.inactive {
     border-color: #ccc;
 }
 
-.item.inactive img {
+.item-area.inactive img {
     opacity: 0.4;
 }
 
-.item.inactive:hover {
+.item-area.inactive:hover {
     border-color: #bbb;
 }
 
-.item.inactive:hover img {
+.item-area.inactive:hover img {
     opacity: 0.3;
 }
 
-.item.active:hover {
-    border-color: #E4C210;
+.item-area.inactive .item-price {
+    font-size: 28px;
+    left: 16%;
+    top: 35%;
+}
+
+.item-area.inactive:hover .item-price {
     opacity: 1.0;
 }
 
-.item.active:hover img {
+.item-area.active {
+    border-color: #D80A0A;
+}
+
+.item-area.active:hover {
+    border-color: #EAD158;
+    opacity: 1.0;
+}
+
+.item-area.active:hover img {
     opacity: 0.4;
     cursor: pointer;
 }
 
-.item.active:hover .item-price {
+.item-area.active .item-price {
+    font-size: 40px;
+    left: 15%;
+    top: 30%;
+}
+
+.item-area.active:hover .item-price {
     opacity: 1.0;
 }
 
+.item-label {
+    color: #555;
+}
+
+.item-label:hover {
+    color: #333;
+    cursor: pointer;
+}
+
 .user-info {
+    /*float: right;*/
 }
 
 .user-info img {
     border-radius: 50%;
-    float: right;
-    width: 80px;
+    height: 45px;
+    margin: 3px 18px 0 6px;
 }
 
 .user-info .user-summary {
-    display: inline-block;
-    float: left;
+    /*display: inline-block;*/
+    /*float: left;*/
 }
 
 .user-info .user-sign-message {
-    float: left;
+    /*float: left;*/
 }
 
 .user-info .user-google-sign-button {
-    float: right;
+    /*float: right;*/
+    margin: 7px 7px 0 7px;
+}
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: 0px !important;
 }

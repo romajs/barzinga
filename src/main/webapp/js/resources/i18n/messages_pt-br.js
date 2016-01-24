@@ -14,7 +14,9 @@ resourceBundle.messages['pt-br'] = {
     'item.buy.outofstock': '{0} esta fora de estoque',
 
     // Menu
-    'menu.home': 'Home',
+    'menu.home': 'Pagina inicial',
+    'menu.about': 'Sobre',
+    'menu.help': 'Ajuda',
 
     // Modal
     'modal.title.confirm': 'Confirmação',

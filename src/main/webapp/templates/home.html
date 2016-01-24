@@ -3,13 +3,18 @@
         <img src="img/logo.png" class="center-block" />
     </div>
     <div class="row stock">
-        <div class="col-sm-4 stock-items" ng-repeat="item in items  | orderBy: 'name' | orderBy: activesFirst">
-            <!-- <span class="center-block btn btn-danger">{{item.name}}</span> -->
-            <div class="item center-block" ng-click="buy(item)" ng-class="item.amount > 0 ? 'active' : 'inactive'"
+        <div class="item col-sm-4" ng-repeat="item in items  | orderBy: 'name' | orderBy: activesFirst">
+            <span class="item-label center-block">{{item.name}}</span>
+            <div class="item-area center-block" ng-click="buy(item)" ng-class="item.amount > 0 ? 'active' : 'inactive'"
                 title="{{item.amount > 0 ? 'item.buy.click' : 'item.buy.outofstock' | dxI18n:item.name}}" >
-                <span class="item-price">{{item.price|currency}}</span>
+                <!-- <span class="item-price">{{item.price|currency}}</span> -->
+                <span ng-show="item.amount" class="item-price">{{'Comprar'}}</span>
+                <span ng-hide="item.amount" class="item-price">{{'Indisponivel'}}</span>
                 <img src="{{'item-'+item.code|dxImg}}" class="center-block" />
             </div>
+            <span ng-show="item.amount" class="item-label center-block">{{item.amount}} {{item.amount > 1 ? 'unidades' : 'unidade'}}</span>
+            <span ng-show="item.amount" class="item-label center-block">{{item.price|currency}}</span>
+            <span ng-hide="item.amount" class="item-label center-block">{{'Produto indisponivel'}}</span>
             <br>
             <br>
             <!-- <span class="center-block btn btn-primary">{{item.amount}}</span> -->

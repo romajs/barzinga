@@ -1,31 +1,70 @@
 <br>
-<div class="container container-header">
 
-    <div class="row menu well">
-        <ul class="nav nav-pills">
+<div class="container container-fluid">
+
+    <div class="row navbar navbar-default">
+
+        <ul class="nav navbar-nav">
             <li role="presentation" class="active"><a href="#">{{'menu.home'|dxI18n}}</a></li>
+            <li role="presentation" class=""><a href="#/about">{{'menu.about'|dxI18n}}</a></li>
+            <li role="presentation" class=""><a href="#/help">{{'menu.help'|dxI18n}}</a></li>
         </ul>
-    </div>
 
-    <div class="row user-info well" id="user-info">
+        <div class="nav navbar-nav navbar-right user-info" id="user-info">
 
-        <div ng-hide="isAuthenticated()">
-            <div class="user-sign-message">
-                <i>{{'user.signin.message'|dxI18n}}</i>
+            <!-- <div ng-hide="isAuthenticated()">
+                <div class="user-google-sign-button">
+                    <google-plus-signin clientid="{{googleClientId}}"></google-plus-signin>
+                </div>
+            </div> -->
+
+            <div ng-show="isAuthenticated()">
+                <div class="user-summary">
+                    <!-- <p class="bold">{{user.name}}</p> -->
+                    <!-- <p class="" ng-class="user.balance >= 0 ? 'text-success' : 'text-danger'"> -->
+                        <!-- {{'user.balance'|dxI18n}} <span class="bold user-balance">{{(user.balance||0)|currency}}</span> -->
+                    <!-- </p> -->
+                    <!-- <a href="#" ng-click="logout()">{{'user.logout'|dxI18n}}</a> -->
+                </div>
+                <!-- <img src="{{user.imageUrl}}"/> -->
             </div>
-            <div class="user-google-sign-button">
-                <google-plus-signin clientid="{{googleClientId}}"></google-plus-signin>
-            </div>
+
         </div>
 
-        <div ng-show="isAuthenticated()">
-            <div class="user-summary">
-                <p class="bold">{{user.name}}</p>
-                <p class="" ng-class="user.balance >= 0 ? 'text-success' : 'text-danger'">{{'user.balance'|dxI18n}} <span class="bold user-balance">{{(user.balance||0)|currency}}</span></p>
-             <a href="#" ng-click="logout()">{{'user.logout'|dxI18n}}</a>
-            </div>
-            <img src="{{user.imageUrl}}"/>
-        </div>
+        <ul class="nav navbar-nav navbar-right user-info">
+            <li ng-hide="isAuthenticated()" class="">
+                <div class="user-google-sign-button">
+                    <google-plus-signin clientid="{{googleClientId}}"></google-plus-signin>
+                </div>
+            </li>
+            <li ng-show="isAuthenticated()" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    {{user.name}} <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">Minha conta</a>
+                    </li>
+                    <li>
+                        <a href="#">Historico</a>
+                    </li>
+                    <li>
+                         <a href="#">
+                            <span class="user-balance" ng-class="user.balance >= 0 ? 'text-success' : 'text-danger'">
+                                {{'user.balance'|dxI18n}} <span class="bold">{{(user.balance||0)|currency}}</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                        <a href="#" ng-click="logout()">{{'user.logout'|dxI18n}}</a>
+                    </li>
+                </ul>
+            </li>
+            <li ng-show="isAuthenticated()" class="">
+                <img src="{{user.imageUrl}}"/>
+            </li>
+        </ul>
 
     </div>
 
