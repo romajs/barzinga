@@ -1,3 +1,3 @@
 #!/bin/bash -xe
 trap 'kill %1' SIGINT
-mvn -f api/ yawp:devserver | tee -a api.log  & mvn -f web/ jetty:run | tee -a web.log 
+mvn -f api/ yawp:devserver | tee -a foodshelf-api.log & http-server web/ -p 8080 | tee -a foodshelf-web.log 
