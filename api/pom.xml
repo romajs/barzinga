@@ -38,6 +38,9 @@
                 <groupId>io.yawp</groupId>
                 <artifactId>yawp-maven-plugin</artifactId>
                 <version>${yawp.version}</version>
+                <configuration>
+                    <port>8000</port>
+                </configuration>
             </plugin>
 
             <plugin>
@@ -75,8 +78,6 @@
                 <artifactId>appengine-maven-plugin</artifactId>
                 <version>${appengine.target.version}</version>
                 <configuration>
-                    <!-- <address>0.0.0.0</address> -->
-                    <port>8000</port>
                     <jvmFlags>
                         <jvmFlag>-Xdebug</jvmFlag>
                         <jvmFlag>-Xnoagent</jvmFlag>
