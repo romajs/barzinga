@@ -1,23 +1,26 @@
 angular.module('app.login' , [
 	'ui.router', 'app.auth.service', 'app.user.service'
 ])
+
 .config(function($stateProvider) {
 	$stateProvider.state('login', {
 		url: '/login',
-		controller: 'appLoginController',
+		controller: 'loginController',
 		templateUrl: 'templates/login.html',
 		data: {
-			requiresLogin: false
+			requireAuthentication: false
 		}
 	});
 })
 
-.run(function($rootScope) {
-	$rootScope.user = undefined;
-})
-.controller('appLoginController', function($rootScope, $state, authService, userService) {
+// .run(function($rootScope) {
+// 	$rootScope.user = undefined;
+// })
+
+.controller('loginController', function($rootScope, $state, authService, userService) {
 
 	$rootScope.$on('authService.login', function(event, user) {
+		console.log('### user login')
 		$rootScope.user = user;
 		userService.getCurrentBalance().then(function(value) {
 			$rootScope.user.balance = value;
@@ -26,6 +29,7 @@ angular.module('app.login' , [
 	});
 
 	$rootScope.$on('authService.logout', function() {
+		console.log('### user logout')
 		$state.go('login');
 	});
 

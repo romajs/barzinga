@@ -34,7 +34,11 @@ angular.module('app', [
         url: '/not_found',
         templateUrl: 'templates/not_found.html',
     })
-    $urlRouterProvider.otherwise('/not_found');
+    $urlRouterProvider.when('', function($state) {
+       $state.go('home');
+    }).when('/', function($state) {
+       $state.go('home');
+    }).otherwise('not_found');
 })
 
 .factory("dxResourcesBundle", function() {
@@ -69,7 +73,7 @@ angular.module('app', [
 
 .run(function($state, $rootScope, authService) {
     $rootScope.$on('$stateChangeStart', function(event, toState, fromState) {
-        if(toState.data && toState.data.requiresLogin && !authService.isAuthenticated()) {
+        if(toState.data && toState.data.requireAuthentication && !authService.isAuthenticated()) {
             event.preventDefault();
             $state.go('login');
         }

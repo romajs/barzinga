@@ -1,20 +1,19 @@
 angular.module('app.home' , [
 	'ui.router', 'dx.modal'
 ])
+
 .config(function($stateProvider, $urlRouterProvider) {
 	$stateProvider.state('home', {
-		url: '/',
-		controller: 'appHomeController',
+		url: '/home',
+		controller: 'homeController',
 		templateUrl: 'templates/home.html',
 		data: {
-			requiresLogin: true
+			requireAuthentication: true
 		}
 	})
-	$urlRouterProvider.when('/home', function($state) {
-          $state.go('home');
-	})
 })
-.controller('appHomeController', function($scope, $rootScope, itemService, dxModal) {
+
+.controller('homeController', function($scope, $rootScope, itemService, dxModal) {
 
 	$scope.items = [];
 

@@ -14,11 +14,11 @@ resourceBundle.messages['pt-br'] = {
     'item.buy.outofstock': '{0} esta fora de estoque',
 
     // Menu
-    'menu.home': 'Pagina inicial',
+    'menu.home': 'Página inicial',
     'menu.about': 'Sobre',
     'menu.help': 'Ajuda',
     'menu.account': 'Minha conta',
-    'menu.history': 'Historico',
+    'menu.history': 'Histórico',
 
     // Modal
     'modal.title.confirm': 'Confirmação',
@@ -32,12 +32,12 @@ resourceBundle.messages['pt-br'] = {
     // Title
     'title.about' : 'Sobre',
     'title.help' : 'Ajuda',
-    'title.history' : 'Historico',
+    'title.history' : 'Histórico',
     'title.oops' : 'Ooops',
 
     'buy' : 'Comprar',
-    'unavailable' : 'Indisponivel',
-    'page_not_found' : 'Pagina nao encontrada',
+    'unavailable' : 'Indisponível',
+    'page_not_found' : 'Página nao encontrada',
     'unities' : 'unidades',
     'unity': 'unidade',
     
