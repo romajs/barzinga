@@ -1,4 +1,4 @@
-angular.module('app.home' , [
+angular.module('home' , [
 	'ui.router', 'dx.modal'
 ])
 

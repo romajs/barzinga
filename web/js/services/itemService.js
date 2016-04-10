@@ -1,8 +1,8 @@
-angular.module('app.item.service', [
+angular.module('itemService', [
 ])
-.service('itemService', function($http, $q, dxConfig) {
+.service('itemService', function($http, $q, config) {
 
-    this.findByCustomLogic = function() {
+    this.findByCustomLogic = function() { // FIXME
         var items = [];
         items.push({ name: 'Batata Ruffles', code: 'ruffles', amount : 30.0, price: 1.00 });
         items.push({ name: 'Cafe Tres Coracoes', code: 'tres', amount : 0.0, price: 1.00 });

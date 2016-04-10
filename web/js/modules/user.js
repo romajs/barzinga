@@ -1,4 +1,4 @@
-// angular.module('app.user', [
+// angular.module('user', [
 	
 // ])
 // .service('userService', function(dxPromise) {

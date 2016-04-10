@@ -1,5 +1,5 @@
-angular.module('app.login' , [
-	'ui.router', 'app.auth.service', 'app.user.service'
+angular.module('login' , [
+	'ui.router', 'authService', 'userService'
 ])
 
 .config(function($stateProvider) {

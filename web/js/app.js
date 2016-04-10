@@ -1,21 +1,21 @@
 angular.module('app', [
 
-    // app
-    'app.home',
-    'app.login',
-    'app.history',
-    // 'app.user',
+    // app services
+    'authService',
+    'itemService',
 
-    // services
-    'app.auth.service',
-    'app.item.service',
+    // app modules
+    'home',
+    'login',
+    'history',
+    // 'user',
 
-    // // dx
+    // dx
     'dx.i18n',
     'dx.modal',
     // 'dx.utils',
 
-    // // google sign in
+    // google sign in
     'directive.g+signin',
 ])
 
@@ -48,14 +48,14 @@ angular.module('app', [
     };
 })
 
-.factory('dxService', function($http, $q, dxConfig, dxPromise) {
+.factory('dxService', function($http, $q, config, dxPromise) {
 
     return function(url) {
 
         this.promise = dxPromise;
 
         this.url = function() {
-            return dxConfig.apiUrl + '/' + url;
+            return config.apiUrl + '/' + url;
         };
     };
 
@@ -67,8 +67,8 @@ angular.module('app', [
     };
 })
 
-.run(function($rootScope, dxConfig) {
-    $rootScope.googleClientId = dxConfig.settings.googleClientId;
+.run(function($rootScope, config) {
+    $rootScope.googleClientId = config.settings.googleClientId;
 })
 
 .run(function($state, $rootScope, authService) {
@@ -86,7 +86,7 @@ angular.module('app', [
     }
 })
 
-.service('yawpService', function($http, $q, dxConfig) {
+.service('yawpService', function($http, $q, config) {
 
     this.fetch = function() {
         // TODO
@@ -98,7 +98,7 @@ angular.module('app', [
 
 })
 
-.value('dxConfig', {
+.value('config', {
     rootUrl: window.location.protocol + '//' + window.location.host,
     apiUrl: this.rootUrl + '/api',
     settings: {

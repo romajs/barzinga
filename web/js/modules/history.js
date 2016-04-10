@@ -1,4 +1,4 @@
-angular.module('app.history' , [
+angular.module('history' , [
 	'ui.router'
 ])
 
