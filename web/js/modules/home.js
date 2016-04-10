@@ -1,5 +1,6 @@
 angular.module('home' , [
-	'ui.router', 'dx.modal'
+	'ui.router',
+	'dx.modal'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {

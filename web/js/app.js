@@ -1,27 +1,21 @@
 angular.module('app', [
-
-    // app services
     'authService',
     'itemService',
-
-    // app modules
     'home',
     'login',
     'history',
-    // 'user',
-
-    // dx
     'dx.i18n',
     'dx.modal',
-    // 'dx.utils',
-
-    // google sign in
     'directive.g+signin',
 ])
 
-.config(['dxI18nProvider', function (dxI18nProvider) {
-    dxI18nProvider.setResourceBundle(resourceBundle.messages['pt-br']);
-}])
+.value('config', {
+    rootUrl: window.location.protocol + '//' + window.location.host,
+    apiUrl: this.rootUrl + '/api',
+    settings: {
+        googleClientId: '434805178213-3s9o2qb2kh4fau4vaaa64bbu68jiajig',
+    },
+})
 
 .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider.state('about', {
@@ -41,67 +35,45 @@ angular.module('app', [
     }).otherwise('not_found');
 })
 
-.factory("dxResourcesBundle", function() {
-    return {
-        img: img,
-        i18n: msg_i18n_pt_br,
-    };
-})
-
-.factory('dxService', function($http, $q, config, dxPromise) {
-
-    return function(url) {
-
-        this.promise = dxPromise;
-
-        this.url = function() {
-            return config.apiUrl + '/' + url;
-        };
-    };
-
-})
-
-.filter('dxImg', function() { // FIXME
-    return function(input) {
-        return input ? resourceBundle.images[input] : input;
-    };
+.run(function($http, dxI18n) {
+    $http.get('languages/pt-br.json').success(function(json) {
+        console.info(json);  
+        dxI18n.set('pt-br', json);
+    });
 })
 
 .run(function($rootScope, config) {
     $rootScope.googleClientId = config.settings.googleClientId;
 })
 
-.run(function($state, $rootScope, authService) {
+.run(function($rootScope, $window, $state, authService) {
     $rootScope.$on('$stateChangeStart', function(event, toState, fromState) {
         if(toState.data && toState.data.requireAuthentication && !authService.isAuthenticated()) {
             event.preventDefault();
             $state.go('login');
         }
     });
-})
-
-.run(function ($window, $rootScope) {
-    $rootScope.historyBack = function(){
+    $rootScope.historyBack = function() {
         $window.history.back();
-    }
+    };
 })
 
-.service('yawpService', function($http, $q, config) {
+// FIXME
+.factory('dxService', function($http, $q, config, dxPromise) {
+    return function(url) {
+        this.promise = dxPromise;
+        this.url = function() {
+            return config.apiUrl + '/' + url;
+        };
+    };
+})
 
+// FIXME
+.service('yawpService', function($http, $q, config) {
     this.fetch = function() {
         // TODO
     };
-
     this.where = function() {
         // TODO
     };
-
-})
-
-.value('config', {
-    rootUrl: window.location.protocol + '//' + window.location.host,
-    apiUrl: this.rootUrl + '/api',
-    settings: {
-        googleClientId: '434805178213-3s9o2qb2kh4fau4vaaa64bbu68jiajig',
-    },
 })
