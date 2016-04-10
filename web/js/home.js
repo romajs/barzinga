@@ -18,11 +18,13 @@ angular.module('app.home' , [
 	$scope.items = [];
 
 	$scope.activesFirst = function(item) {
-		return item.amount <= 0;
+		return item !== undefined && item.amount <= 0;
 	};
 
 	$scope.init = function() {
-		$scope.items = itemService.findByCustomLogic();
+		itemService.findByCustomLogic().then(function(items) {
+			$scope.items = items;	
+		});
 	}
 
 	$scope.buy = function(item) {

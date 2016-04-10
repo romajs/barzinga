@@ -1,8 +1,5 @@
 resourceBundle.messages['pt-br'] = {
 
-    // App
-    'app.title': 'Food Shelf',
-
     // User
     'user.balance': 'Saldo',
     'user.signin.message': 'Necessário efetuar login com sua conta google',

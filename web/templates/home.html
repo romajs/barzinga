@@ -9,7 +9,7 @@
                 title="{{item.amount > 0 ? 'item.buy.click' : 'item.buy.outofstock' | dxI18n:item.name}}" >
                 <span ng-show="item.amount" class="item-detail">{{'buy'|dxI18n}}</span>
                 <span ng-hide="item.amount" class="item-detail">{{'unavailable'|dxI18n}}</span>
-                <img src="{{'item-'+item.code|dxImg}}" class="center-block" />
+                <img ng-src="{{'item-'+item.code|dxImg}}" class="center-block" />
             </div>
             <span ng-show="item.amount" class="item-label center-block">{{item.amount}} {{item.amount > 1 ? 'unities' : 'unity' | dxI18n}}</span>
             <span ng-show="item.amount" class="item-label center-block">{{item.price|currency}}</span>

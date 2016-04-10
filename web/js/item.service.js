@@ -13,7 +13,9 @@ angular.module('app.item.service', [
         items.push({ name: 'Coca-cola', code: 'coca', amount : 20.0, price: 1.50 });
         items.push({ name: 'Mentos', code: 'mentos', amount : 30.0, price: 1.00 });
         items.push({ name: 'Twix', code: 'twix', amount : 50.0, price: 0.50 });
-        return items;
+        var d = $q.defer();
+        d.resolve(items);
+        return d.promise;
     };
 
 })
