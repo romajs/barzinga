@@ -37,7 +37,6 @@ angular.module('app', [
 
 .run(function($http, dxI18n) {
     $http.get('languages/pt-br.json').success(function(json) {
-        console.info(json);  
         dxI18n.set('pt-br', json);
     });
 })
