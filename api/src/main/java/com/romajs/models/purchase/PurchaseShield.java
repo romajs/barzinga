@@ -1,8 +1,8 @@
-package com.romajs.models.historic;
+package com.romajs.models.purchase;
 
 import io.yawp.repository.shields.Shield;
 
-public class HistoricShield extends Shield<Historic> {
+public class PurchaseShield extends Shield<Purchase> {
 
     @Override
     public void defaults() {

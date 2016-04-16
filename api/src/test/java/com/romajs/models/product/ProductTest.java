@@ -8,13 +8,13 @@ import com.romajs.utils.EndpointTestCase;
 
 public class ProductTest extends EndpointTestCase {
 
-    @Test
-    public void testCreate() {
-        // TODO Auto-generated method stub
-        String json=post("/products", "{}");
-        Product product=from(json, Product.class);
+	@Test
+	public void testCreate() {
+		// TODO Auto-generated method stub
+		String json = post("/products", "{}");
+		Product product = from(json, Product.class);
 
-        assertNotNull(product);
-    }
+		assertNotNull(product);
+	}
 
 }
