@@ -4,6 +4,7 @@ import io.yawp.repository.IdRef;
 import io.yawp.repository.annotations.Endpoint;
 import io.yawp.repository.annotations.Id;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import com.romajs.models.product.Product;
@@ -20,6 +21,36 @@ public class Purchase {
 	private IdRef<User> usedId;
 
 	private Date date;
+
+	private BigDecimal totalAmount;
+
+	private BigDecimal amount;;
+
+	private Long quantity;
+
+	public BigDecimal getTotalAmount() {
+		return totalAmount;
+	}
+
+	public void setTotalAmount(BigDecimal totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+
+	public BigDecimal getAmount() {
+		return amount;
+	}
+
+	public void setAmount(BigDecimal amount) {
+		this.amount = amount;
+	}
+
+	public Long getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Long quantity) {
+		this.quantity = quantity;
+	}
 
 	public IdRef<Purchase> getId() {
 		return id;

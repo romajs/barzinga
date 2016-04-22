@@ -1,17 +1,17 @@
 package com.romajs.models.product;
 
-import com.romajs.components.History;
-import com.romajs.models.purchase.Purchase;
-
 import io.yawp.repository.IdRef;
 import io.yawp.repository.actions.Action;
 import io.yawp.repository.query.QueryBuilder;
 
+import com.romajs.components.History;
+import com.romajs.models.purchase.Purchase;
+
 public class ProductAction extends Action<Product> {
 
-	public Product updateAmount(IdRef<Product> id, long amount) {
+	public Product updateAmount(IdRef<Product> id, long quantity) {
 		Product product = id.fetch();
-		product.setAmount(product.getAmount() + amount);
+		product.setQuantity(product.getQuantity() + quantity);
 		return yawp.save(product);
 	}
 

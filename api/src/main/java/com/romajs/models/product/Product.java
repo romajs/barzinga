@@ -1,13 +1,13 @@
 package com.romajs.models.product;
 
+import io.yawp.repository.IdRef;
+import io.yawp.repository.annotations.Endpoint;
+import io.yawp.repository.annotations.Id;
+
 import java.math.BigDecimal;
 import java.util.List;
 
 import com.romajs.models.attachment.Attachment;
-
-import io.yawp.repository.IdRef;
-import io.yawp.repository.annotations.Endpoint;
-import io.yawp.repository.annotations.Id;
 
 @Endpoint(path = "/products")
 public class Product {
@@ -19,9 +19,9 @@ public class Product {
 
 	private String description;
 
-	private BigDecimal value;
+	private BigDecimal amount;
 
-	private Long amount;
+	private Long quantity;
 
 	private List<IdRef<Attachment>> attachments;
 
@@ -49,20 +49,20 @@ public class Product {
 		this.description = description;
 	}
 
-	public BigDecimal getValue() {
-		return value;
-	}
-
-	public void setValue(BigDecimal value) {
-		this.value = value;
-	}
-
-	public Long getAmount() {
+	public BigDecimal getAmount() {
 		return amount;
 	}
 
-	public void setAmount(Long amount) {
+	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
+	}
+
+	public Long getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Long quantity) {
+		this.quantity = quantity;
 	}
 
 	public List<IdRef<Attachment>> getAttachments() {

@@ -25,4 +25,12 @@ public class History<T> implements Iterable<T> {
 		return list.iterator();
 	}
 
+	public List<T> getList() {
+		return list;
+	}
+
+	public void setList(List<T> list) {
+		this.list = list;
+	}
+
 }
