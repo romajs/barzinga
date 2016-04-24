@@ -25,6 +25,16 @@ public class Product {
 
 	private List<IdRef<Attachment>> attachments;
 
+	public Product() {
+	}
+
+	public Product(String name, String description, BigDecimal amount, Long quantity) {
+		this.name = name;
+		this.description = description;
+		this.amount = amount;
+		this.quantity = quantity;
+	}
+
 	public IdRef<Product> getId() {
 		return id;
 	}
