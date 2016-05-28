@@ -3,17 +3,17 @@
         <img src="img/logo.png" class="center-block" />
     </div>
     <div class="row">
-        <div class="item col-sm-4" ng-repeat="item in items  | orderBy: 'name' | orderBy: activesFirst">
+        <div class="item col-sm-4" ng-repeat="item in items | orderBy: 'name' | orderBy: activesFirst">
             <span class="item-label center-block">{{item.name}}</span>
-            <div class="item-area center-block" ng-click="buy(item)" ng-class="item.amount > 0 ? 'active' : 'inactive'"
-                title="{{item.amount > 0 ? 'item.buy.click' : 'item.buy.outofstock' | dxI18n:item.name}}" >
-                <span ng-show="item.amount" class="item-detail">{{'buy'|dxI18n}}</span>
-                <span ng-hide="item.amount" class="item-detail">{{'unavailable'|dxI18n}}</span>
-                <img ng-src="{{item.img}}" class="center-block" />
+            <div class="item-area center-block" ng-click="buy(item)" ng-class="item.quantity > 0 ? 'active' : 'inactive'"
+                title="{{item.quantity > 0 ? 'item.buy.click' : 'item.buy.outofstock' | dxI18n:item.name}}" >
+                <span ng-show="item.quantity" class="item-detail">{{'buy'|dxI18n}}</span>
+                <span ng-hide="item.quantity" class="item-detail">{{'unavailable'|dxI18n}}</span>
+                <img ng-src="{{item.attachments[0].path+item.attachments[0].name}}" class="center-block" />
             </div>
-            <span ng-show="item.amount" class="item-label center-block">{{item.amount}} {{item.amount > 1 ? 'unities' : 'unity' | dxI18n}}</span>
-            <span ng-show="item.amount" class="item-label center-block">{{item.price|currency}}</span>
-            <span ng-hide="item.amount" class="item-label center-block">{{'Produto indisponivel'}}</span>
+            <span ng-show="item.quantity" class="item-label center-block">{{item.quantity}} {{item.quantity > 1 ? 'unities' : 'unity' | dxI18n}}</span>
+            <span ng-show="item.quantity" class="item-label center-block">{{item.value|currency}}</span>
+            <span ng-hide="item.quantity" class="item-label center-block">{{'Produto indisponivel'}}</span>
             <br>
             <br>
         </div>

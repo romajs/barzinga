@@ -19,11 +19,12 @@ angular.module('home' , [
 	$scope.items = [];
 
 	$scope.activesFirst = function(item) {
-		return item !== undefined && item.amount <= 0;
+		return item !== undefined && item.quantity <= 0;
 	};
 
 	$scope.init = function() {
 		itemService.findByCustomLogic().then(function(items) {
+			console.info('items:', items);
 			$scope.items = items;	
 		});
 	}

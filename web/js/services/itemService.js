@@ -1,13 +1,11 @@
 angular.module('itemService', [
 ])
-.service('itemService', function($http, $q, config) {
+.service('itemService', function($http, $q, yawp, config) {
 
-    this.findByCustomLogic = function() { // FIXME
-        var d = $q.defer();
-        // TODO
-        var items = [];
-        d.resolve(items);
-        return d.promise;
+    this.endpoint = yawp('/products');
+
+    this.findByCustomLogic = function() {
+        return this.endpoint/*.order([{ p: 'name', d: 'asc'}])*/.limit(10).list();
     };
 
 })

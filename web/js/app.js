@@ -7,6 +7,7 @@ angular.module('app', [
     'dx.i18n',
     'dx.modal',
     'directive.g+signin',
+    'yawp',
 ])
 
 .value('config', {
@@ -15,6 +16,12 @@ angular.module('app', [
     settings: {
         googleClientId: '434805178213-3s9o2qb2kh4fau4vaaa64bbu68jiajig',
     },
+})
+
+.config(function(yawpProvider) {
+    yawpProvider.config(function (c) {
+        c.baseUrl('http://localhost:8000/api');
+    });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -54,25 +61,5 @@ angular.module('app', [
     });
     $rootScope.historyBack = function() {
         $window.history.back();
-    };
-})
-
-// FIXME
-.factory('dxService', function($http, $q, config, dxPromise) {
-    return function(url) {
-        this.promise = dxPromise;
-        this.url = function() {
-            return config.apiUrl + '/' + url;
-        };
-    };
-})
-
-// FIXME
-.service('yawpService', function($http, $q, config) {
-    this.fetch = function() {
-        // TODO
-    };
-    this.where = function() {
-        // TODO
     };
 })
