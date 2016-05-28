@@ -12,6 +12,7 @@
             <param-value>com.romajs</param-value>
         </init-param>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>EndpointServlet</servlet-name>
         <url-pattern>/api/*</url-pattern>
