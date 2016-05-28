@@ -1,6 +1,9 @@
 angular.module('userService', [
+    //
 ])
-.service('userService', function($q) {
+.service('userService', function($q, yawp) {
+
+    angular.extend(this, yawp('/users'));
 
 	this.getCurrentBalance = function() {
 		var d = $q.defer();

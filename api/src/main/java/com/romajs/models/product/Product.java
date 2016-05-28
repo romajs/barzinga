@@ -22,6 +22,7 @@ public class Product {
 
 	private String description;
 
+	@Index
 	private Long quantity;
 
 	private Double value;

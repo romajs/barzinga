@@ -1,6 +1,7 @@
 angular.module('app', [
     'authService',
-    'itemService',
+    'productService',
+    'userService',
     'home',
     'login',
     'history',

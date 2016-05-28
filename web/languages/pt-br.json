@@ -3,9 +3,10 @@
     "user.signin.message": "Necessário efetuar login com sua conta google",
     "user.logout": "Sair",
 
-    "item.buy" : "Comprar {0}",
-    "item.buy.click" : "Clique para comprar {0}",
-    "item.buy.outofstock": "{0} esta fora de estoque",
+    "product.buy" : "Comprar {0}",
+    "product.buy.click" : "Clique para comprar {0}",
+    "product.buy.outofstock": "{0} esta fora de estoque",
+    "product.unavailable": "Produto indisponível",
 
     "menu.home": "Página inicial",
     "menu.about": "Sobre",
