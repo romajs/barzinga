@@ -1,11 +1,14 @@
 package com.romajs.models.product;
 
+import java.util.List;
+
 import io.yawp.repository.IdRef;
 import io.yawp.repository.annotations.Endpoint;
 import io.yawp.repository.annotations.Id;
+import io.yawp.repository.annotations.Json;
 
-import java.math.BigDecimal;
-import java.util.List;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 import com.romajs.models.attachment.Attachment;
 
@@ -19,20 +22,21 @@ public class Product {
 
 	private String description;
 
-	private BigDecimal amount;
-
 	private Long quantity;
 
-	private List<IdRef<Attachment>> attachments;
+	private Double value;
+	
+	@Json
+	private List<Attachment> attachments;
 
 	public Product() {
 	}
 
-	public Product(String name, String description, BigDecimal amount, Long quantity) {
+	public Product(String name, String description, Long quantity, Double value) {
 		this.name = name;
 		this.description = description;
-		this.amount = amount;
 		this.quantity = quantity;
+		this.value = value;
 	}
 
 	public IdRef<Product> getId() {
@@ -59,14 +63,6 @@ public class Product {
 		this.description = description;
 	}
 
-	public BigDecimal getAmount() {
-		return amount;
-	}
-
-	public void setAmount(BigDecimal amount) {
-		this.amount = amount;
-	}
-
 	public Long getQuantity() {
 		return quantity;
 	}
@@ -75,12 +71,16 @@ public class Product {
 		this.quantity = quantity;
 	}
 
-	public List<IdRef<Attachment>> getAttachments() {
-		return attachments;
+	public Double getValue() {
+		return value;
 	}
 
-	public void setAttachments(List<IdRef<Attachment>> attachments) {
-		this.attachments = attachments;
+	public void setValue(Double value) {
+		this.value = value;
 	}
 
+	@Override
+	public String toString() {
+		return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+	}
 }

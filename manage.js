@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var fs = require('fs');
-var request = require('request');
+var request = require('sync-request');
 
 // db
 // - seed
@@ -10,30 +10,27 @@ var request = require('request');
 // perform
 // - all
 
-function loadFiles(path) {
-	var files = [];
-	fs.readdirSync(path).forEach(function(file) {
-		files.push(JSON.parse(fs.readFileSync('file', 'utf8'));
+function main(dir) {
+	fs.readdirSync(dir).forEach(function(name) {
+
+		var path = dir + name;
+		// console.info(path);
+
+		if (fs.statSync(path).isDirectory()) {
+			return;
+		}
+		var file = fs.readFileSync(path, 'utf8')
+
+		var json = JSON.parse(file);
+		// console.info(json);
+
+		var response = request(json.method, 'http://localhost:8000/api' + json.endpoint, {
+			json: json.data,
+		});
+
+		console.info(path, '=>', response.statusCode);
+
 	});
-	return files;
 };
 
-var endpoint = 'http://localhost:8080/';
-
-for(var file in loadFiles('./importation/')) {
-	var options = {
-		baseUrl: 'http://localhost:8080/',
-		url: file.endpoint;
-		method: file.httpMethod,
-		// headers: {
-		// 	'Content-Type': 'application/x-www-form-urlencoded',
-		// 	'Content-Length': postData.length
-		// }
-		body: file.content,
-		json: true,
-	};
-	var req = request(options, function() {
-		// TODO
-	});
-}
-
+main('./importation/');

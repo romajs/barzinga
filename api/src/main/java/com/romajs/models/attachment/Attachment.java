@@ -4,6 +4,11 @@ import io.yawp.repository.IdRef;
 import io.yawp.repository.annotations.Endpoint;
 import io.yawp.repository.annotations.Id;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+import com.romajs.models.product.Product;
+
 @Endpoint(path = "/attachments")
 public class Attachment {
 
@@ -15,6 +20,8 @@ public class Attachment {
 	private String path;
 
 	private AttachmentType type;
+
+	private IdRef<Product> productId;
 
 	public IdRef<Attachment> getId() {
 		return id;
@@ -48,4 +55,16 @@ public class Attachment {
 		this.type = type;
 	}
 
+	public IdRef<Product> getProductId() {
+		return productId;
+	}
+
+	public void setProductId(IdRef<Product> productId) {
+		this.productId = productId;
+	}
+
+	@Override
+	public String toString() {
+		return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+	}
 }

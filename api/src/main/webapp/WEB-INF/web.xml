@@ -35,15 +35,6 @@
         <url-pattern>/fixtures/*</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>DeleteAllServlet</servlet-name>
-        <servlet-class>io.yawp.repository.tools.DeleteAllServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>DeleteAllServlet</servlet-name>
-        <url-pattern>/fixtures/delete_all</url-pattern>
-    </servlet-mapping>
-
     <!-- security-constraint>
         <web-resource-collection>
             <web-resource-name>foodshelf-api-all</web-resource-name>

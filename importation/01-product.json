@@ -1,0 +1,123 @@
+{
+    "endpoint" : "/products",
+    "method" : "POST",
+    "data" : [
+        {
+            "name": "Coca-cola",
+            "description" : "",
+            "quantity" : 20.0,
+            "value": 1.50,
+            "attachments" : [
+                {
+                    "path" : "/img/items/",
+                    "name" : "coca.jpg",
+                    "type" : "IMAGE"
+                }
+            ]
+        },
+        {
+            "name": "Suco Del Valle",
+            "description" : "",
+            "quantity" : 10.0,
+            "value": 1.00,
+            "attachments" : [
+                {
+                    "path" : "/img/items/",
+                    "name" : "del-valle.jpg",
+                    "type" : "IMAGE"
+                }
+            ]
+        },
+        {
+            "name": "Doritos",
+            "description" : "",
+            "quantity" : 30.0,
+            "value": 1.00,
+            "attachments" : [
+                {
+                    "path" : "/img/items/",
+                    "name" : "doritos.jpg",
+                    "type" : "IMAGE"
+                }
+            ]
+        },
+        {
+            "name": "Mentos",
+            "description" : "",
+            "quantity" : 30.0,
+            "value": 1.00,
+            "attachments" : [
+                {
+                    "path" : "/img/items/",
+                    "name" : "mentos.jpg",
+                    "type" : "IMAGE"
+                }
+            ]
+        },
+        {
+            "name": "Pacoquita",
+            "description" : "",
+            "quantity" : 30.0,
+            "value": 0.18,
+            "attachments" : [
+                {
+                    "path" : "/img/items/",
+                    "name" : "pacoquita.jpg",
+                    "type" : "IMAGE"
+                }
+            ]
+        },
+        {
+            "name": "Batata Ruffles",
+            "description" : "",
+            "quantity" : 30.0,
+            "value": 1.00,
+            "attachments" : [
+                {
+                    "path" : "/img/items/",
+                    "name" : "ruffles.jpg",
+                    "type" : "IMAGE"
+                }
+            ]
+        },
+        {
+            "name": "Toddynho",
+            "description" : "",
+            "quantity" : 20.0,
+            "value": 0.50,
+            "attachments" : [
+                {
+                    "path" : "/img/items/",
+                    "name" : "toddynho.jpg",
+                    "type" : "IMAGE"
+                }
+            ]
+        },
+        {
+            "name": "Cafe Tres Coracoes",
+            "description" : "",
+            "quantity" : 0.0,
+            "value": 1.00,
+            "attachments" : [
+                {
+                    "path" : "/img/items/",
+                    "name" : "tres.jpg",
+                    "type" : "IMAGE"
+                }
+            ]
+        },
+        {
+            "name": "Twix",
+            "description" : "",
+            "quantity" : 50.0,
+            "value": 0.50,
+            "attachments" : [
+                {
+                    "path" : "/img/items/",
+                    "name" : "twix.jpg",
+                    "type" : "IMAGE"
+                }
+            ]
+        }
+    ]
+}
