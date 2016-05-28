@@ -10,8 +10,7 @@
             "attachments" : [
                 {
                     "path" : "/img/items/",
-                    "name" : "coca.jpg",
-                    "type" : "IMAGE"
+                    "name" : "coca.jpg"
                 }
             ]
         },
@@ -23,8 +22,7 @@
             "attachments" : [
                 {
                     "path" : "/img/items/",
-                    "name" : "del-valle.jpg",
-                    "type" : "IMAGE"
+                    "name" : "del-valle.jpg"
                 }
             ]
         },
@@ -36,8 +34,7 @@
             "attachments" : [
                 {
                     "path" : "/img/items/",
-                    "name" : "doritos.jpg",
-                    "type" : "IMAGE"
+                    "name" : "doritos.jpg"
                 }
             ]
         },
@@ -49,8 +46,7 @@
             "attachments" : [
                 {
                     "path" : "/img/items/",
-                    "name" : "mentos.jpg",
-                    "type" : "IMAGE"
+                    "name" : "mentos.jpg"
                 }
             ]
         },
@@ -62,8 +58,7 @@
             "attachments" : [
                 {
                     "path" : "/img/items/",
-                    "name" : "pacoquita.jpg",
-                    "type" : "IMAGE"
+                    "name" : "pacoquita.jpg"
                 }
             ]
         },
@@ -75,8 +70,7 @@
             "attachments" : [
                 {
                     "path" : "/img/items/",
-                    "name" : "ruffles.jpg",
-                    "type" : "IMAGE"
+                    "name" : "ruffles.jpg"
                 }
             ]
         },
@@ -88,8 +82,7 @@
             "attachments" : [
                 {
                     "path" : "/img/items/",
-                    "name" : "toddynho.jpg",
-                    "type" : "IMAGE"
+                    "name" : "toddynho.jpg"
                 }
             ]
         },
@@ -101,8 +94,7 @@
             "attachments" : [
                 {
                     "path" : "/img/items/",
-                    "name" : "tres.jpg",
-                    "type" : "IMAGE"
+                    "name" : "tres.jpg"
                 }
             ]
         },
@@ -114,8 +106,7 @@
             "attachments" : [
                 {
                     "path" : "/img/items/",
-                    "name" : "twix.jpg",
-                    "type" : "IMAGE"
+                    "name" : "twix.jpg"
                 }
             ]
         }

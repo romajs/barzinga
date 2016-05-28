@@ -1,6 +1,0 @@
-{
-    "endpoint" : "/attachments",
-    "method" : "POST",
-    "data" : [        
-    ]
-}

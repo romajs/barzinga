@@ -10,7 +10,6 @@ import java.util.List;
 
 import com.romajs.components.History;
 import com.romajs.components.Service;
-import com.romajs.models.attachment.Attachment;
 import com.romajs.models.purchase.Purchase;
 
 public class ProductAction extends Action<Product> {
@@ -18,7 +17,7 @@ public class ProductAction extends Action<Product> {
 	ProductService service = Service.factory(ProductService.class, yawp);
 	
 	@POST("postWithAttachments")
-	public Product postWithAttachments(List<Attachment> attachments) {
+	public Product postWithAttachments(List<ProductAttachment> attachments) {
 //		product = yawp.saveWithHooks(product);
 //		for(Attachment attachment: attachments) {
 //			attachment.setProductId(product.getId());

@@ -1,16 +1,15 @@
 package com.romajs.models.product;
 
-import java.util.List;
-
 import io.yawp.repository.IdRef;
 import io.yawp.repository.annotations.Endpoint;
 import io.yawp.repository.annotations.Id;
+import io.yawp.repository.annotations.Index;
 import io.yawp.repository.annotations.Json;
+
+import java.util.List;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-
-import com.romajs.models.attachment.Attachment;
 
 @Endpoint(path = "/products")
 public class Product {
@@ -18,6 +17,7 @@ public class Product {
 	@Id
 	private IdRef<Product> id;
 
+	@Index
 	private String name;
 
 	private String description;
@@ -27,7 +27,7 @@ public class Product {
 	private Double value;
 	
 	@Json
-	private List<Attachment> attachments;
+	private List<ProductAttachment> attachments;
 
 	public Product() {
 	}
