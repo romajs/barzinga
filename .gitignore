@@ -1,6 +1,7 @@
-**target/
+**.log
 **node_modules/
+**target/
+*.sublime-workspace
+.classpath
 .project
 .settings
-.classpath
-**.log
